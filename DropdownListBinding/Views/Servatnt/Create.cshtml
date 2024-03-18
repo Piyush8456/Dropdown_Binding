@@ -1,0 +1,22 @@
+﻿@model DropdownListBinding.Models.ViewModel.ServantsViewModel
+
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "ServantController", FormMethod.Post))
+{
+    <div>
+        <label>Servant Name :</label>
+        @Html.TextBoxFor(s => s.Servants.ServantName)
+    </div>
+    <br />
+    <div>
+       <label>Skill :</label>
+        @Html.DropDownListFor(model => model.Servants.SkillsId, Model.SkillsList, "Select Skill")
+
+        <br/><br/>
+        <input type="submit" value="Create"/>
+    </div>
+}
